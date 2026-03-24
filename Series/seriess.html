@@ -19,20 +19,41 @@ body {
     margin: 0;
 }
 
-/* HEADER */
+/* NAVBAR */
 .top-nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.9);
+    background: rgba(5, 5, 5, 0.95);
     backdrop-filter: blur(10px);
+    border-bottom: 2px solid #ff003c;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 10px 30px;
-    border-bottom: 2px solid var(--cyber-red);
 }
 
+/* LOGO */
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.logo-text {
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+/* NAV LINKS */
 .links-box {
     display: flex;
     gap: 25px;
@@ -45,26 +66,29 @@ body {
     transition: 0.2s;
 }
 
-.nav-item:hover {
-    color: var(--cyber-red);
+.nav-item:hover,
+.nav-item.active {
+    color: #ff003c;
     transform: skew(-10deg);
+    text-shadow: 0 0 8px #ff003c;
 }
 
 /* SEARCH */
 .search-bar {
-    border: 2px solid var(--cyber-red);
-    padding: 5px 12px;
     display: flex;
     align-items: center;
+    border: 2px solid #ff003c;
+    padding: 5px 10px;
     background: rgba(255, 0, 60, 0.1);
 }
 
 .search-bar input {
     background: transparent;
     border: none;
-    color: var(--cyber-orange);
+    color: #fcee0a;
     outline: none;
     margin-left: 8px;
+    width: 120px;
 }
 
 /* GRID */
@@ -119,15 +143,25 @@ body {
 <body>
 
 <header class="top-nav">
-    <div>🎬 SERIES HUB</div>
+
+    <div class="logo-box">
+        <img src="logo.jpg" alt="Logo" class="logo-img">
+        <span class="logo-text">JAPANESE CREATIONS</span>
+    </div>
 
     <nav class="links-box">
-        <a href="index.html" class="nav-item">HOME</a>
-        <a href="movie/movie.html" class="nav-item">MOVIES</a>
-        <a href="Series/seriess.html" class="nav-item">SERIES</a>
-        <a href="authors/authors.html" class="nav-item">AUTHORS</a>
+        <a href="../index.html" class="nav-item">HOME</a>
+        <a href="../movies/movie.html" class="nav-item">MOVIES</a>
+        <a href="../Series/seriess.html" class="nav-item active">SERIES</a>
+        <a href="../authors/authors.html" class="nav-item">AUTHORS</a>
         <a href="about/about.html" class="nav-item">ABOUT</a>
     </nav>
+
+    <div class="search-bar">
+        ⚠ <input type="text" id="searchInput" placeholder="SEARCH">
+    </div>
+
+</header>
 
     <div class="search-bar">
         ⚠ <input type="text" id="searchInput" placeholder="SEARCH">
