@@ -1,45 +1,202 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Neighbor Totoro</title>
-<link rel="stylesheet" href="authors.css">
-<link rel="icon" href="../images/logo.jpg">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #0b0b0b 0%, #1a1a0b 40%, #000 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR */
+.top-nav {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.my-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 50px;
+}
+
+.logo-sub {
+    color: #66ff66;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.links-box {
+    display: flex;
+    gap: 40px;
+}
+
+.links-box a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.links-box a:hover {
+    color: #66ff66;
+}
+
+/* PROFILE SECTION */
+.profile {
+    display: flex;
+    gap: 50px;
+    padding: 60px;
+}
+
+.profile img {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(102, 255, 102, 0.3);
+}
+
+.profile-info {
+    max-width: 600px;
+}
+
+.profile-info h2 {
+    color: #66ff66;
+    margin-bottom: 10px;
+}
+
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.modal-tags span {
+    background: rgba(102, 255, 102, 0.15);
+    border: 1px solid rgba(102, 255, 102, 0.4);
+    color: #b3ffb3;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.modal-motto {
+    font-style: italic;
+    color: #99ff99;
+    margin: 15px 0;
+}
+
+.modal-desc {
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.watch-btn {
+    background: linear-gradient(45deg, #339933, #66ff66);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* TRAILER SECTION */
+.trailer {
+    padding: 40px 60px;
+}
+
+.trailer h2 {
+    color: #66ff66;
+    margin-bottom: 20px;
+}
+
+.trailer video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(102, 255, 102, 0.3);
+}
+</style>
+
 </head>
 
 <body>
 
-<div class="navbar">
-    <div class="logo">MOVIE HUB</div>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="authors.html">Authors</a>
+<header>
+  <nav class="top-nav">
+    <div class="my-logo">
+      <img src="../images/logo.jpg" class="logo-img" alt="Movie Hub Logo">
+      <span class="logo-sub">MOVIE HUB</span>
     </div>
-</div>
 
-<div class="profile">
+    <div class="links-box">
+      <a href="index.html">HOME</a>
+      <a href="authors.html">AUTHORS</a>
+    </div>
+  </nav>
+</header>
 
-<img src="movie6.jpg" alt="My Neighbor Totoro">
+<section class="profile">
+  <img src="movie6.jpg" alt="My Neighbor Totoro">
 
-<div class="profile-info">
-<h2>My Neighbor Totoro</h2>
+  <div class="profile-info">
+    <h2>My Neighbor Totoro</h2>
 
-<p><b>Director:</b> Hayao Miyazaki | <b>Studio:</b> Studio Ghibli</p>
-<div class="tags">
-    <span>Family</span>
-    <span>Slice of Life</span>
-    <span>Spirits</span>
-    <span>Classic</span>
-</div>
-<p class="motto">"Magic is all around us if we just look."</p>
+    <p><b>Director:</b> Hayao Miyazaki | <b>Studio:</b> Studio Ghibli</p>
 
-<p>
-Two young sisters, Satsuki and Mei, move to an old house in the countryside to be closer to their sick mother's hospital. While exploring outside, they find out the forest is full of friendly, invisible spirits. They meet a giant, fluffy creature they name Totoro. Totoro takes them on magical adventures and helps them stay happy while they worry about their mom.
-</p>
+    <div class="modal-tags">
+      <span>Family</span>
+      <span>Slice of Life</span>
+      <span>Spirits</span>
+      <span>Classic</span>
+    </div>
 
-<a href="index.html" class="back-btn">← Back to Hub</a>
+    <p class="modal-motto">"Magic is all around us if we just look."</p>
 
-</div>
-</div>
+    <p class="modal-desc">
+      Two young sisters, Satsuki and Mei, move to an old house in the countryside 
+      to be closer to their sick mother's hospital. While exploring outside, they 
+      discover that the forest is full of friendly, invisible spirits. They meet 
+      a giant, fluffy creature they name Totoro, who takes them on magical 
+      adventures and helps them stay happy while worrying about their mom.
+    </p>
+
+    <a href="../index.html" class="watch-btn">← Back to Home</a>
+  </div>
+</section>
+
+<section class="trailer">
+  <h2>🎬 Trailer</h2>
+
+  <video controls>
+    <source src="trailer6.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+</section>
 
 </body>
 </html>
