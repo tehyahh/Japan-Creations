@@ -172,42 +172,63 @@ body {
     <main class="anime-grid" id="grid-container"></main>
 </div>
 
-<script>
-const grid = document.getElementById('grid-container');
-const searchInput = document.getElementById('searchInput');
+  <script>
+        const grid = document.getElementById('grid-container');
+        const searchInput = document.getElementById('searchInput');
 
-const animeData = [
-    { name: "JUJUTSU KAISEN", img: "JJK..jpg", url: "anime1.html" },
-    { name: "DEMON SLAYER", img: "DS.jpg", url: "anime2.html" }
-];
+        const animeData = [
+            { name: "JUJUTSU KAISEN", img: "JJK..jpg", url: "anime1.html" },
+            { name: "DEMON SLAYER", img: "DS.jpg", url: "anime2.html" },
+            { name: "CHAINSAWMAN", img: "CM.jpg", url: "anime3.html" },
+            { name: "SAIKI K.", img: "SK.jpg", url: "anime4.html" },
+            { name: "SPY X FAMILY", img: "SF.jpg", url: "anime5.html" },
+            { name: "KAGUYA-SAMA", img: "LW.jpg", url: "anime6.html" },
+            { name: "FRIEREN", img: "Frieren.jpg", url: "anime7.html" },
+            { name: "HAIKYUU", img: "haikyu.jpg", url: "anime8.html" },
+            { name: "SK8 THE INFINITY", img: "sk8.jpg", url: "anime9.html" }
+        ];
 
-function renderAnime(data) {
-    grid.innerHTML = "";
+        function renderAnime(data) {
+            grid.innerHTML = "";
+            if (data.length === 0) {
+                grid.innerHTML = `<div class="empty-state">[DATABASE EMPTY: NO MATCHES]</div>`;
+                return;
+            }
 
-    data.forEach((anime) => {
-        grid.innerHTML += `
-            <a href="${anime.url}" class="chip-card">
-                <div class="chip-outer">
-                    <div class="chip-inner">
-                        <img src="${anime.img}" class="chip-img">
-                    </div>
-                </div>
-                <div class="label-box">${anime.name}</div>
-            </a>
-        `;
-    });
-}
+            data.forEach((anime) => {
+                grid.innerHTML += `
+                    <a href="${anime.url}" class="chip-card">
+                        <div class="chip-outer">
+                            <div class="chip-inner"><img src="${anime.img}" alt="${anime.name}" class="chip-img"></div>
+                        </div>
+                        <div class="label-box">${anime.name}</div>
+                    </a>
+                `;
+            });
+        }
 
-searchInput.oninput = (e) => {
-    const term = e.target.value.toLowerCase();
-    const filtered = animeData.filter(a =>
-        a.name.toLowerCase().includes(term)
-    );
-    renderAnime(filtered);
-};
+        function navigate(page, element) {
+     
+            document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+  
+            element.classList.add('active');
 
-renderAnime(animeData);
-</script>
+            if(page === 'SERIES' || page === 'HOME') {
+                renderAnime(animeData);
+            } else {
+                grid.innerHTML = `<div class="empty-state">[ACCESS DENIED: ${page} DATABASE OFFLINE]</div>`;
+            }
+        }
 
+
+        searchInput.oninput = (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = animeData.filter(a => a.name.toLowerCase().includes(term));
+            renderAnime(filtered);
+        };
+
+
+        renderAnime(animeData);
+    </script>
 </body>
 </html>
