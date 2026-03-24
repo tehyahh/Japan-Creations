@@ -69,6 +69,7 @@ body {
     display: flex;
     gap: 50px;
     padding: 60px;
+    flex-wrap: wrap; /* ✅ makes it responsive */
 }
 
 .profile img {
@@ -123,7 +124,7 @@ body {
     display: inline-block;
 }
 
-/* TRAILER */
+/* TRAILER SECTION */
 .trailer {
     padding: 40px 60px;
 }
@@ -151,6 +152,7 @@ body {
       <span class="logo-sub">MOVIE HUB</span>
     </div>
 
+    <!-- ✅ fixed links to match folder structure -->
     <div class="links-box">
       <a href="../index.html">HOME</a>
       <a href="../authors/authors.html">AUTHORS</a>
@@ -178,7 +180,7 @@ body {
     <p class="modal-desc">
       A group of teenagers in Tokyo are dealing with normal high school problems, stress, 
       and trying to follow their dreams. They find a mysterious song on their phones that 
-      transports them to a magical world called 'Sekai,' where virtual singers help them 
+      transports them to a magical world called "Sekai," where virtual singers help them 
       face real-life struggles through music and friendship.
     </p>
 
@@ -191,6 +193,8 @@ body {
 
   <video controls>
     <source src="trailer9.mp4" type="video/mp4">
+    <!-- ✅ added fallback text -->
+    Your browser does not support the video tag.
   </video>
 </section>
 
