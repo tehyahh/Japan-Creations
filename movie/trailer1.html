@@ -17,8 +17,6 @@ body {
     background: radial-gradient(circle at top, #1a0000 0%, #0b0b0b 40%, #000 100%);
     color: white;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 /* NAVBAR */
@@ -64,7 +62,7 @@ body {
     color: #ff4d4d;
 }
 
-/* PROFILE SECTION */
+/* PROFILE */
 .profile {
     display: flex;
     gap: 50px;
@@ -121,8 +119,26 @@ body {
     border-radius: 30px;
     text-decoration: none;
 }
-</style>
 
+/* TRAILER */
+.trailer {
+    padding: 40px 60px;
+}
+
+.trailer h2 {
+    color: #ff4d4d;
+    margin-bottom: 20px;
+}
+
+.trailer iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 0 20px rgba(255,0,0,0.3);
+}
+</style>
 </head>
 
 <body>
@@ -162,11 +178,18 @@ body {
     <p class="modal-motto">"A magical adventure for just one night."</p>
 
     <p class="modal-desc">
-      Mary is a young girl spending a boring summer in the country...
+      Mary is a young girl spending a boring summer in the country. One day, she follows a cat into the woods and finds a rare, magical flower. This flower gives her witch powers for just one night! She flies a broomstick to a secret magic school, but soon finds out the teachers are hiding a dark secret about dangerous magic experiments.
     </p>
 
-    <a href="index.html" class="watch-btn">← Back to Hub</a>
+    <a href="movies.html" class="watch-btn">← Back to Movies</a>
   </div>
+</section>
+
+<!-- TRAILER SECTION -->
+<section class="trailer">
+  <h2>🎬 Trailer</h2>
+
+  <iframe src="https://www.youtube.com/embed/AdKjEHfHINQ" allowfullscreen></iframe>
 </section>
 
 </body>
