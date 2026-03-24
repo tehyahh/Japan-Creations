@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Info | Cyberpunk DB</title>
+    <style>
+        :root { --cyber-red: #ff003c; --cyber-orange: #fcee0a; --dark-bg: #050505; }
+        body { background: var(--dark-bg); color: #fff; font-family: 'Courier New', monospace; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        
+        .info-container { background: #2a0a0a; width: 850px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); padding: 20px; position: relative; }
+        .back-btn { background: var(--cyber-orange); color: #000; border: none; padding: 8px 25px; border-radius: 20px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; margin-bottom: 20px; font-size: 0.8rem; }
+        
+        .video-box { width: 95%; height: 380px; background: #000; margin: 0 auto; border: 1px solid rgba(255,255,255,0.1); }
+        .info-section { padding: 25px 45px; }
+        .info-title { font-size: 1.8rem; font-weight: bold; color: #fff; margin-bottom: 5px; }
+        .info-row { line-height: 1.6; color: #ccc; }
+        .info-row b { color: #fff; display: block; margin-top: 15px; }
+
+        .divider { border-bottom: 1px solid rgba(255,255,255,0.2); margin: 30px 0; position: relative; }
+        .season-label { position: absolute; right: 0; top: -15px; background: #2a0a0a; border: 1px solid #fff; padding: 4px 20px; font-size: 0.8rem; }
+        
+        .ep-list { list-style: none; padding: 0 45px; }
+        .ep-item { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: #bbb; }
+    </style>
+</head>
+<body>
+    <div class="info-container">
+        <a href="seriess.html" class="back-btn">BACK ◀</a>
+        
+        <div class="video-box">
+            <iframe width="100%" height="100%" src="Saiki.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+    <div class="info-section">
+        <div class="info-title">SAIKI K.</div>
+        <div class="info-row"><b>SERIES:</b> The Disastrous Life of Saiki K. <b>RATING:</b> 8.4/10 <b>SYNOPSIS:</b> A powerful psychic tries to lead a normal life despite his annoying classmates.</div>
+        <div class="divider"><div class="season-label">SEASON 1</div></div>
+    </div>
+
+        <ul class="ep-list">
+            <li class="ep-item">EPISODE 1</li>
+            <li class="ep-item">EPISODE 2</li>
+            <li class="ep-item">EPISODE 3</li>
+        </ul>
+    </div>
+</body>
+</html>
