@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Series</title>
+    <style>
+        :root {
+            --cyber-red: #ff003c;
+            --cyber-orange: #fcee0a;
+            --dark-bg: #050505;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            background-image: linear-gradient(rgba(255, 0, 60, 0.05) 50%, rgba(0, 0, 0, 0.3) 50%), 
+                              linear-gradient(90deg, rgba(255, 0, 0, 0.08), rgba(255, 0, 0, 0.02), rgba(255, 0, 0, 0.08));
+            background-size: 100% 4px, 3px 100%;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container { 
+            max-width: 1100px; 
+            width: 100%; 
+            padding: 0 20px 50px 20px;
+        }
+
+        /* --- STICKY HEADER --- */
+        .sketch-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--cyber-red);
+            margin-bottom: 20px;
+        }
+
+        .logo-text {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -3px;
+            margin: 0;
+            color: var(--cyber-red);
+            text-shadow: 2px 2px 0px rgba(255, 0, 60, 0.3);
+        }
+
+        .nav-links { display: flex; gap: 30px; margin-bottom: 5px; }
+        
+        .nav-item { 
+            color: #fff; text-decoration: none; font-weight: bold; cursor: pointer; 
+            background: none; border: none; font-family: inherit; font-size: 0.9rem;
+            transition: 0.2s;
+        }
+
+        .nav-item:hover, .nav-item.active { 
+            color: var(--cyber-red); 
+            transform: skew(-10deg); 
+            text-shadow: 0 0 8px var(--cyber-red); 
+        }
+
+        .search-bar {
+            border: 2px solid var(--cyber-red);
+            padding: 5px 12px;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 0, 60, 0.1);
+            margin-bottom: 5px;
+        }
+
+        .search-bar input { 
+            background: transparent; border: none; color: var(--cyber-orange); 
+            outline: none; margin-left: 8px; width: 110px; font-family: inherit;
+        }
+
+        /* --- GRID --- */
+        .anime-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .chip-card { display: flex; flex-direction: column; align-items: center; cursor: pointer; text-decoration: none; color: inherit; }
+
+        .chip-outer {
+            width: 200px; height: 250px; background: var(--cyber-red);
+            clip-path: polygon(20% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 20%);
+            display: flex; align-items: center; justify-content: center; transition: 0.3s;
+        }
+
+        .chip-inner {
+            width: 192px; height: 242px; background: #000; clip-path: inherit; overflow: hidden;
+        }
+
+        .chip-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; filter: grayscale(100%); transition: 0.4s; }
+
+        .chip-card:hover .chip-img {
+            opacity: 1; filter: grayscale(0%); transform: scale(1.1);
+        }
+
+        .label-box {
+            margin-top: 15px; width: 200px; height: 40px; border-left: 5px solid var(--cyber-red);
+            background: rgba(255, 0, 60, 0.1); display: flex; align-items: center; justify-content: center;
+            font-weight: bold; color: var(--cyber-red); text-align: center; font-size: 0.75rem;
+        }
+
+        .empty-state { grid-column: 1 / -1; text-align: center; color: var(--cyber-orange); margin-top: 100px; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="sketch-header">
+            <div class="logo-area">
+                <h1 class="logo-text">J-ANIME</h1>
+            </div>
+            <nav class="nav-links">
+                <button class="nav-item" onclick="navigate('HOME', this)">HOME</button>
+                <button class="nav-item" onclick="navigate('MOVIES', this)">MOVIES</button>
+                <button class="nav-item active" onclick="navigate('SERIES', this)">SERIES</button>
+                <button class="nav-item" onclick="navigate('AUTHORS', this)">AUTHORS</button>
+                <button class="nav-item" onclick="navigate('ABOUT', this)">ABOUT</button>
+            </nav>
+            <div class="search-bar">
+                <span>⚠</span>
+                <input type="text" id="searchInput" placeholder="SEARCH">
+            </div>
+        </header>
+
+        <main class="anime-grid" id="grid-container"></main>
+    </div>
+
+    <script>
+        const grid = document.getElementById('grid-container');
+        const searchInput = document.getElementById('searchInput');
+
+        const animeData = [
+            { name: "JUJUTSU KAISEN", img: "JJK..jpg", url: "anime1.html" },
+            { name: "DEMON SLAYER", img: "DS.jpg", url: "anime2.html" },
+            { name: "CHAINSAWMAN", img: "CM.jpg", url: "anime3.html" },
+            { name: "SAIKI K.", img: "SK.jpg", url: "anime4.html" },
+            { name: "SPY X FAMILY", img: "SF.jpg", url: "anime5.html" },
+            { name: "KAGUYA-SAMA", img: "LW.jpg", url: "anime6.html" },
+            { name: "FRIEREN", img: "Frieren.jpg", url: "anime7.html" },
+            { name: "HAIKYUU", img: "haikyu.jpg", url: "anime8.html" },
+            { name: "SK8 THE INFINITY", img: "sk8.jpg", url: "anime9.html" }
+        ];
+
+        function renderAnime(data) {
+            grid.innerHTML = "";
+            if (data.length === 0) {
+                grid.innerHTML = `<div class="empty-state">[DATABASE EMPTY: NO MATCHES]</div>`;
+                return;
+            }
+
+            data.forEach((anime) => {
+                grid.innerHTML += `
+                    <a href="${anime.url}" class="chip-card">
+                        <div class="chip-outer">
+                            <div class="chip-inner"><img src="${anime.img}" alt="${anime.name}" class="chip-img"></div>
+                        </div>
+                        <div class="label-box">${anime.name}</div>
+                    </a>
+                `;
+            });
+        }
+
+        function navigate(page, element) {
+     
+            document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+  
+            element.classList.add('active');
+
+            if(page === 'SERIES' || page === 'HOME') {
+                renderAnime(animeData);
+            } else {
+                grid.innerHTML = `<div class="empty-state">[ACCESS DENIED: ${page} DATABASE OFFLINE]</div>`;
+            }
+        }
+
+
+        searchInput.oninput = (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = animeData.filter(a => a.name.toLowerCase().includes(term));
+            renderAnime(filtered);
+        };
+
+
+        renderAnime(animeData);
+    </script>
+</body>
+</html>
