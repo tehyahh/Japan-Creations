@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #1a0000 0%, #0b0b0b 40%, #000 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    transition: background 0.8s ease;
+}
+
+/* --- UPDATED NAVIGATION --- */
+.top-nav {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 10px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* New Logo & Subtitle Styles */
+.my-logo {
+    display: flex;
+    flex-direction: row; /* This puts them side-by-side! */
+    align-items: center;
+    gap: 15px; /* Adds a nice space between the picture and the words */
+}
+
+.logo-img {
+    height: 50px; /* Made it slightly bigger to match the text */
+    width: auto;
+    filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.5));
+    border-radius: 4px; 
+}
+
+.logo-sub {
+    color: #ff4d4d;
+    font-size: 1.2rem; /* Increased size so it stands out next to the logo */
+    font-weight: 800; /* Made it a bit bolder */
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+/* New Links Box Styles */
+.links-box {
+    display: flex;
+    gap: 40px; 
+}
+
+.links-box a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
+}
+
+.links-box a:hover {
+    color: #ff4d4d;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+}
+
+/* NEW Logo Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* remove underlines if the logo is a link */
+}
+
+.logo-image {
+    height: 45px; /* Adjust height to fit the nav bar nicely */
+    width: auto;
+    /* Add a subtle shadow to integrate it with the site theme */
+    filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.3));
+    border-radius: 4px; /* Optional, softens the logo edges */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px; /* Increased gap for a cleaner look */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover {
+    color: #ff4d4d;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* --- ACTION BAR & SEARCH --- */
+.action-bar { padding: 30px 60px; }
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid #440000;
+    border-radius: 25px;
+    padding: 8px 20px;
+    width: 320px;
+}
+
+.search-input {
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    margin-left: 10px;
+    width: 100%;
+}
+
+/* --- CAROUSEL & CARDS --- */
+.gallery-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1500px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: absolute;
+    width: 230px;
+    height: 340px;
+    background: #111;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 0, 0, 0.1);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    filter: brightness(0.5);
+    transition: 0.5s;
+}
+
+.card-label {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+    background: #140000;
+    color: #ffb3b3;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.card.is-center {
+    border-color: #ff1a1a;
+    box-shadow: 0 0 50px rgba(255, 0, 0, 0.3);
+    z-index: 500;
+}
+
+.card.is-center img { filter: brightness(1); }
+.card.is-center .card-label { background: #b30000; color: white; }
+
+/* --- MODAL POP-UP STYLES (No changes needed here) --- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.modal-overlay.active { opacity: 1; pointer-events: auto; }
+
+.modal-box {
+    background: rgba(15, 5, 5, 0.95);
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 900px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    transform: translateY(30px) scale(0.95);
+    transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 0 50px rgba(255, 0, 0, 0.3);
+}
+
+.modal-overlay.active .modal-box { transform: translateY(0) scale(1); }
+
+.modal-image-container { width: 40%; background: #000; position: relative; }
+.modal-image-container img { width: 100%; height: 100%; object-fit: cover; }
+
+.modal-content { 
+    width: 60%; 
+    padding: 40px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.modal-title { 
+    font-size: 2.2rem; 
+    color: #ff4d4d; 
+    margin-bottom: 10px; 
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.4); 
+}
+
+.modal-meta {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.modal-meta b { color: #fff; }
+
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-tags span {
+    background: rgba(255, 0, 0, 0.15);
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    color: #ffb3b3;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.modal-motto {
+    font-style: italic;
+    color: #ff8080;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    border-left: 3px solid red;
+    padding-left: 10px;
+}
+
+.modal-desc {
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.watch-btn {
+    background: linear-gradient(45deg, #b30000, #ff1a1a);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
+
+.watch-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(255, 0, 0, 0.6); }
+
+.close-btn { 
+    position: absolute; 
+    top: 15px; 
+    right: 20px; 
+    background: none; 
+    border: none; 
+    color: #fff; 
+    font-size: 2rem; 
+    cursor: pointer; 
+    z-index: 10;
+}
+.close-btn:hover { color: #ff4d4d; }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie & Series Hub - Red Edition</title>
+    <link rel="stylesheet" href="movie.css">
+</head>
+<body>
+
+  <header>
+    <nav class="top-nav">
+      
+     <div class="my-logo">
+        <img src="logo.jpg" alt="Logo" class="logo-img">
+        <span class="logo-sub">JAPANESE CREATIONS</span>
+      </div>
+
+      <nav class="links-box">
+        <a href="index.html">HOME</a>
+        <a href="movies.html">MOVIES</a>
+        <a href="series.html">SERIES</a>
+        <a href="authors/authors.html">AUTHORS</a>
+        <a href="about/about.html">ABOUT</a>
+      </nav>
+
+    </nav>
+  </header>
+
+  <section class="action-bar">
+    <div class="search-container">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search-input" class="search-input" placeholder="Search movies...">
+    </div>
+  </section>
+
+  <main class="gallery-container">
+    <div class="carousel" id="carousel">
+      <div class="card" onclick="selectCard(0)">
+        <img src="movie1.jpg" class="card-poster" alt="Mary and the Witch's Flower">
+        <div class="card-label">Mary and the Witch's Flower</div>
+      </div>
+      <div class="card" onclick="selectCard(1)">
+        <img src="movie2.jpg" class="card-poster" alt="Princess Mononoke">
+        <div class="card-label">Princess Mononoke</div>
+      </div>
+      <div class="card" onclick="selectCard(2)">
+        <img src="movie3.jpg" class="card-poster" alt="Howl's Moving Castle">
+        <div class="card-label">Howl's Moving Castle</div>
+      </div>
+      <div class="card" onclick="selectCard(3)">
+        <img src="movie4.jpg" class="card-poster" alt="Ponyo">
+        <div class="card-label">Ponyo</div>
+      </div>
+      <div class="card" onclick="selectCard(4)">
+        <img src="movie5.jpg" class="card-poster" alt="That Time I Got Reincarnated as a Slime">
+        <div class="card-label">Reincarnated as a Slime</div>
+      </div>
+      <div class="card" onclick="selectCard(5)">
+        <img src="movie6.jpg" class="card-poster" alt="My Neighbor Totoro">
+        <div class="card-label">My Neighbor Totoro</div>
+      </div>
+      <div class="card" onclick="selectCard(6)">
+        <img src="movie7.jpg" class="card-poster" alt="Violet Evergarden">
+        <div class="card-label">Violet Evergarden</div>
+      </div>
+      <div class="card" onclick="selectCard(7)">
+        <img src="movie8.jpg" class="card-poster" alt="Your Name">
+        <div class="card-label">Your Name</div>
+      </div>
+      <div class="card" onclick="selectCard(8)">
+        <img src="movie9.jpg" class="card-poster" alt="Colorful Stage">
+        <div class="card-label">Colorful Stage</div>
+      </div>
+      <div class="card" onclick="selectCard(9)">
+        <img src="movie10.jpg" class="card-poster" alt="Kiki's Delivery Service">
+        <div class="card-label">Kiki's Delivery Service</div>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-box">
+      <button class="close-btn" onclick="closeModal()">×</button>
+      
+      <div class="modal-image-container">
+        <img id="modal-poster" src="" alt="Movie Poster">
+        <video id="modal-trailer" controls style="display: none; width: 100%; height: 100%; object-fit: cover; background: #000;"></video>
+      </div>
+      
+      <div class="modal-content">
+        <h2 class="modal-title" id="modal-title">Title</h2>
+        <p class="modal-meta" id="modal-meta"><b>Director:</b> ... | <b>Studio:</b> ...</p>
+        
+        <div class="modal-tags" id="modal-tags"></div>
+        
+        <p class="modal-motto" id="modal-motto">"Motto"</p>
+        <p class="modal-desc" id="modal-desc">Description goes here.</p>
+        
+        <button class="watch-btn" id="watch-trailer-btn">▶ Watch Trailer</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="movie.js"></script>
+</body>
+</html>
