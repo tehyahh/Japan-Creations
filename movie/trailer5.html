@@ -1,45 +1,203 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>That Time I Got Reincarnated as a Slime</title>
-<link rel="stylesheet" href="authors.css">
-<link rel="icon" href="../images/logo.jpg">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #0b0b0b 0%, #1a0000 40%, #000 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR */
+.top-nav {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.my-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 50px;
+}
+
+.logo-sub {
+    color: #ff4d4d;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.links-box {
+    display: flex;
+    gap: 40px;
+}
+
+.links-box a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.links-box a:hover {
+    color: #ff4d4d;
+}
+
+/* PROFILE SECTION */
+.profile {
+    display: flex;
+    gap: 50px;
+    padding: 60px;
+}
+
+.profile img {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+}
+
+.profile-info {
+    max-width: 600px;
+}
+
+.profile-info h2 {
+    color: #ff4d4d;
+    margin-bottom: 10px;
+}
+
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.modal-tags span {
+    background: rgba(255, 0, 0, 0.15);
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    color: #ffb3b3;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.modal-motto {
+    font-style: italic;
+    color: #ff8080;
+    margin: 15px 0;
+}
+
+.modal-desc {
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.watch-btn {
+    background: linear-gradient(45deg, #b30000, #ff1a1a);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* TRAILER SECTION */
+.trailer {
+    padding: 40px 60px;
+}
+
+.trailer h2 {
+    color: #ff4d4d;
+    margin-bottom: 20px;
+}
+
+.trailer video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.3);
+}
+</style>
+
 </head>
 
 <body>
 
-<div class="navbar">
-    <div class="logo">MOVIE HUB</div>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="authors.html">Authors</a>
+<header>
+  <nav class="top-nav">
+    <div class="my-logo">
+      <img src="../images/logo.jpg" class="logo-img" alt="Movie Hub Logo">
+      <span class="logo-sub">MOVIE HUB</span>
     </div>
-</div>
 
-<div class="profile">
+    <div class="links-box">
+      <a href="index.html">HOME</a>
+      <a href="authors.html">AUTHORS</a>
+    </div>
+  </nav>
+</header>
 
-<img src="movie5.jpg" alt="That Time I Got Reincarnated as a Slime">
+<section class="profile">
+  <img src="movie5.jpg" alt="That Time I Got Reincarnated as a Slime">
 
-<div class="profile-info">
-<h2>That Time I Got Reincarnated as a Slime</h2>
+  <div class="profile-info">
+    <h2>That Time I Got Reincarnated as a Slime</h2>
 
-<p><b>Director:</b> Yasuhito Kikuchi | <b>Studio:</b> 8bit</p>
-<div class="tags">
-    <span>Isekai</span>
-    <span>Fantasy</span>
-    <span>Action</span>
-    <span>Comedy</span>
-</div>
-<p class="motto">"Building a peaceful world, one slime bounce at a time."</p>
+    <p><b>Director:</b> Yasuhito Kikuchi | <b>Studio:</b> 8bit</p>
 
-<p>
-A normal guy from Tokyo dies in an accident and wakes up in a fantasy world. But instead of being a cool hero, he's just a weak little slime! Luckily, he has a special power to eat anything and copy its abilities. He takes the name Rimuru Tempest and starts making friends with dragons, goblins, and wolves to build a peaceful town for all monsters.
-</p>
+    <div class="modal-tags">
+      <span>Isekai</span>
+      <span>Fantasy</span>
+      <span>Action</span>
+      <span>Comedy</span>
+    </div>
 
-<a href="index.html" class="back-btn">← Back to Hub</a>
+    <p class="modal-motto">"Building a peaceful world, one slime bounce at a time."</p>
 
-</div>
-</div>
+    <p class="modal-desc">
+      A normal guy from Tokyo dies in an accident and wakes up in a fantasy world. 
+      But instead of being a cool hero, he's just a weak little slime! Luckily, 
+      he has a special power to eat anything and copy its abilities. He takes 
+      the name Rimuru Tempest and starts making friends with dragons, goblins, 
+      and wolves to build a peaceful town for all monsters.
+    </p>
+
+    <a href="../index.html" class="watch-btn">← Back to Home</a>
+  </div>
+</section>
+
+<section class="trailer">
+  <h2>🎬 Trailer</h2>
+
+  <video controls>
+    <source src="trailer5.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+</section>
 
 </body>
 </html>
