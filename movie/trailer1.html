@@ -1,45 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mary and the Witch's Flower</title>
-<link rel="stylesheet" href="authors.css">
-<link rel="icon" href="../images/logo.jpg">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #1a0000 0%, #0b0b0b 40%, #000 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR */
+.top-nav {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.my-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 50px;
+}
+
+.logo-sub {
+    color: #ff4d4d;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.links-box {
+    display: flex;
+    gap: 40px;
+}
+
+.links-box a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.links-box a:hover {
+    color: #ff4d4d;
+}
+
+/* PROFILE SECTION */
+.profile {
+    display: flex;
+    gap: 50px;
+    padding: 60px;
+}
+
+.profile img {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+}
+
+.profile-info {
+    max-width: 600px;
+}
+
+.profile-info h2 {
+    color: #ff4d4d;
+    margin-bottom: 10px;
+}
+
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.modal-tags span {
+    background: rgba(255, 0, 0, 0.15);
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    color: #ffb3b3;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.modal-motto {
+    font-style: italic;
+    color: #ff8080;
+    margin: 15px 0;
+}
+
+.modal-desc {
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.watch-btn {
+    background: linear-gradient(45deg, #b30000, #ff1a1a);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+}
+</style>
+
 </head>
 
 <body>
 
-<div class="navbar">
-    <div class="logo">MOVIE HUB</div>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="authors.html">Authors</a>
+<header>
+  <nav class="top-nav">
+    <div class="my-logo">
+      <img src="logo.jpg" class="logo-img">
+      <span class="logo-sub">JAPANESE CREATIONS</span>
     </div>
-</div>
 
-<div class="profile">
+    <div class="links-box">
+      <a href="index.html">HOME</a>
+      <a href="movies.html">MOVIES</a>
+      <a href="series.html">SERIES</a>
+      <a href="authors/authors.html">AUTHORS</a>
+      <a href="about/about.html">ABOUT</a>
+    </div>
+  </nav>
+</header>
 
-<img src="movie1.jpg" alt="Mary and the Witch's Flower">
+<section class="profile">
+  <img src="movie1.jpg" alt="Mary and the Witch's Flower">
 
-<div class="profile-info">
-<h2>Mary and the Witch's Flower</h2>
+  <div class="profile-info">
+    <h2>Mary and the Witch's Flower</h2>
 
-<p><b>Director:</b> Hiromasa Yonebayashi | <b>Studio:</b> Studio Ponoc</p>
-<div class="tags">
-    <span>Magic</span>
-    <span>Adventure</span>
-    <span>Fantasy</span>
-    <span>Family</span>
-</div>
-<p class="motto">"A magical adventure for just one night."</p>
+    <p><b>Director:</b> Hiromasa Yonebayashi | <b>Studio:</b> Studio Ponoc</p>
 
-<p>
-Mary is a young girl spending a boring summer in the country. One day, she follows a cat into the woods and finds a rare, magical flower. This flower gives her witch powers for just one night! She flies a broomstick to a secret magic school, but soon finds out the teachers are hiding a dark secret about dangerous magic experiments. This was the very first movie made by Studio Ponoc!
-</p>
+    <div class="modal-tags">
+      <span>Magic</span>
+      <span>Adventure</span>
+      <span>Fantasy</span>
+      <span>Family</span>
+    </div>
 
-<a href="index.html" class="back-btn">← Back to Hub</a>
+    <p class="modal-motto">"A magical adventure for just one night."</p>
 
-</div>
-</div>
+    <p class="modal-desc">
+      Mary is a young girl spending a boring summer in the country...
+    </p>
+
+    <a href="index.html" class="watch-btn">← Back to Hub</a>
+  </div>
+</section>
 
 </body>
 </html>
