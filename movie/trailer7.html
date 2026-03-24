@@ -1,45 +1,201 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Violet Evergarden</title>
-<link rel="stylesheet" href="authors.css">
-<link rel="icon" href="../images/logo.jpg">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #0b0b0b 0%, #1a0b1a 40%, #000 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR */
+.top-nav {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.my-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 50px;
+}
+
+.logo-sub {
+    color: #ff99ff;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.links-box {
+    display: flex;
+    gap: 40px;
+}
+
+.links-box a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.links-box a:hover {
+    color: #ff99ff;
+}
+
+/* PROFILE SECTION */
+.profile {
+    display: flex;
+    gap: 50px;
+    padding: 60px;
+}
+
+.profile img {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 153, 255, 0.3);
+}
+
+.profile-info {
+    max-width: 600px;
+}
+
+.profile-info h2 {
+    color: #ff99ff;
+    margin-bottom: 10px;
+}
+
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.modal-tags span {
+    background: rgba(255, 153, 255, 0.15);
+    border: 1px solid rgba(255, 153, 255, 0.4);
+    color: #ffb3ff;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.modal-motto {
+    font-style: italic;
+    color: #ffb3ff;
+    margin: 15px 0;
+}
+
+.modal-desc {
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.watch-btn {
+    background: linear-gradient(45deg, #cc33cc, #ff99ff);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* TRAILER SECTION */
+.trailer {
+    padding: 40px 60px;
+}
+
+.trailer h2 {
+    color: #ff99ff;
+    margin-bottom: 20px;
+}
+
+.trailer video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 153, 255, 0.3);
+}
+</style>
+
 </head>
 
 <body>
 
-<div class="navbar">
-    <div class="logo">MOVIE HUB</div>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="authors.html">Authors</a>
+<header>
+  <nav class="top-nav">
+    <div class="my-logo">
+      <img src="../images/logo.jpg" class="logo-img" alt="Movie Hub Logo">
+      <span class="logo-sub">MOVIE HUB</span>
     </div>
-</div>
 
-<div class="profile">
+    <div class="links-box">
+      <a href="index.html">HOME</a>
+      <a href="authors.html">AUTHORS</a>
+    </div>
+  </nav>
+</header>
 
-<img src="movie7.jpg" alt="Violet Evergarden">
+<section class="profile">
+  <img src="movie7.jpg" alt="Violet Evergarden">
 
-<div class="profile-info">
-<h2>Violet Evergarden</h2>
+  <div class="profile-info">
+    <h2>Violet Evergarden</h2>
 
-<p><b>Director:</b> Taichi Ishidate | <b>Studio:</b> Kyoto Animation</p>
-<div class="tags">
-    <span>Drama</span>
-    <span>Emotional</span>
-    <span>Romance</span>
-    <span>Masterpiece</span>
-</div>
-<p class="motto">"Writing letters to learn what 'I love you' means."</p>
+    <p><b>Director:</b> Taichi Ishidate | <b>Studio:</b> Kyoto Animation</p>
 
-<p>
-Violet is a young girl who was raised only to be a soldier in a terrible war. Now that the war is over, she has metal arms and doesn't know what to do with her life. Her boss's last words to her were "I love you," but she doesn't know what that means. To find out, she gets a job writing letters for other people, learning about human feelings along the way.
-</p>
+    <div class="modal-tags">
+      <span>Drama</span>
+      <span>Emotional</span>
+      <span>Romance</span>
+      <span>Masterpiece</span>
+    </div>
 
-<a href="index.html" class="back-btn">← Back to Hub</a>
+    <p class="modal-motto">"Writing letters to learn what 'I love you' means."</p>
 
-</div>
-</div>
+    <p class="modal-desc">
+      Violet is a young girl who was raised only to be a soldier in a terrible war. 
+      Now that the war is over, she has metal arms and doesn't know what to do with her life. 
+      Her boss's last words to her were "I love you," but she doesn't know what that means. 
+      To find out, she gets a job writing letters for other people, learning about human feelings along the way.
+    </p>
+
+    <a href="../index.html" class="watch-btn">← Back to Home</a>
+  </div>
+</section>
+
+<section class="trailer">
+  <h2>🎬 Trailer</h2>
+
+  <video controls>
+    <source src="trailer7.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+</section>
 
 </body>
 </html>
